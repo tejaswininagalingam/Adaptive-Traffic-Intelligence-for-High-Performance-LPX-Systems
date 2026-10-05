@@ -1,0 +1,585 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//Mirabilis Design//DTD MoML 1//EN"
+    "http://www.mirabilisdesign.com/xml/dtd/MoML_1.dtd">
+<entity name="LPX_STATIC_BASELINE" class="VisualSim.actor.TypedCompositeActor">
+    <property name="_createdBy" class="VisualSim.kernel.attributes.VersionAttribute" value="2020.Q2"/>
+    <property name="_windowProperties" class="VisualSim.actor.gui.WindowPropertiesAttribute" value="{bounds={-8, -8, 1382, 784}, maximized=true}"/>
+    <property name="_ModelBuilderSize" class="VisualSim.actor.gui.SizeAttribute" value="[1154, 666]"/>
+    <property name="_ModelBuilderZoomFactor" class="VisualSim.data.expr.ExpertParameter" value="1.25738244983528"/>
+    <property name="_ModelBuilderCenter" class="VisualSim.data.expr.ExpertParameter" value="{-50.08669969512192, -781.859375}"/>
+    <property name="DigitalSimulator" class="VisualSim.simulators.de.kernel.DEDirector">
+        <property name="digitalDebugger" class="VisualSim.kernel.util.StringAttribute" value="Off">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Off" class="VisualSim.kernel.util.StringAttribute" value="Off"/>
+                <property name="Pause" class="VisualSim.kernel.util.StringAttribute" value="Pause"/>
+                <property name="Run" class="VisualSim.kernel.util.StringAttribute" value="Run"/>
+                <property name="Summary_Only" class="VisualSim.kernel.util.StringAttribute" value="Summary_Only"/>
+            </property>
+        </property>
+        <property name="stopTime" class="VisualSim.data.expr.Parameter" value="10.0"/>
+        <property name="timeResolution" class="VisualSim.moml.SharedParameter" value="1E-12">
+            <property name="style" class="VisualSim.actor.gui.style.NotEditableLineStyle"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-505.0, -1030.0}"/>
+    </property>
+    <entity name="Traffic" class="VisualSim.actor.lib.DS_Source">
+        <property name="Value_1" class="VisualSim.data.expr.Parameter" value="0.01"/>
+        <property name="Value_2" class="VisualSim.data.expr.Parameter" value="2.0"/>
+        <property name="Time_Distribution" class="VisualSim.kernel.util.StringAttribute" value="Fixed (Value_1)">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Single Event" class="VisualSim.kernel.util.StringAttribute" value="Single Event"/>
+                <property name="Fixed (Value_1)" class="VisualSim.kernel.util.StringAttribute" value="Fixed (Value_1)"/>
+                <property name="Uniform (Value_1, Value_2)" class="VisualSim.kernel.util.StringAttribute" value="Uniform (Value_1, Value_2)"/>
+                <property name="Exponential (Value_1)" class="VisualSim.kernel.util.StringAttribute" value="Exponential (Value_1)"/>
+                <property name="Normal (Value_1, Value_2)" class="VisualSim.kernel.util.StringAttribute" value="Normal (Value_1, Value_2)"/>
+            </property>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-505.0, -710.0}"/>
+    </entity>
+    <entity name="Mapper" class="VisualSim.actor.lib.Task_Basic">
+        <property name="Target_Resource" class="VisualSim.data.expr.StringParameter" value="&quot;LPU_0&quot;"/>
+        <property name="Task_Number" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Priority" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Time" class="VisualSim.data.expr.StringParameter" value="0.02"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Parent_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{190.0, -731.0}"/>
+    </entity>
+    <entity name="LPU_0" class="VisualSim.actor.lib.Scheduler_SW">
+        <property name="Resource_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_0&quot;"/>
+        <property name="Next_Resource" class="VisualSim.data.expr.Parameter" value="&quot;None&quot;"/>
+        <property name="Max_Scheduler_Length" class="VisualSim.data.expr.Parameter" value="1000"/>
+        <property name="Time_Type" class="VisualSim.kernel.util.StringAttribute" value="Relative Time">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Relative Time" class="VisualSim.kernel.util.StringAttribute" value="Relative Time"/>
+                <property name="Number Clocks" class="VisualSim.kernel.util.StringAttribute" value="Number Clocks"/>
+            </property>
+        </property>
+        <property name="Scheduler_Type" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Scheduler_FCFS" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS"/>
+                <property name="FCFS + Preempt" class="VisualSim.kernel.util.StringAttribute" value="FCFS + Preempt"/>
+                <property name="Scheduler_RR" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_RR"/>
+                <property name="Scheduler_User_1" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_1"/>
+                <property name="Scheduler_User_2" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_2"/>
+            </property>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="This_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="7"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-505.0, -855.0}"/>
+    </entity>
+    <entity name="LPU_1" class="VisualSim.actor.lib.Scheduler_SW">
+        <property name="Resource_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_1&quot;"/>
+        <property name="Next_Resource" class="VisualSim.data.expr.Parameter" value="&quot;None&quot;"/>
+        <property name="Time_Type" class="VisualSim.kernel.util.StringAttribute" value="Relative Time">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Relative Time" class="VisualSim.kernel.util.StringAttribute" value="Relative Time"/>
+                <property name="Number Clocks" class="VisualSim.kernel.util.StringAttribute" value="Number Clocks"/>
+            </property>
+        </property>
+        <property name="Scheduler_Type" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Scheduler_FCFS" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS"/>
+                <property name="FCFS + Preempt" class="VisualSim.kernel.util.StringAttribute" value="FCFS + Preempt"/>
+                <property name="Scheduler_RR" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_RR"/>
+                <property name="Scheduler_User_1" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_1"/>
+                <property name="Scheduler_User_2" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_2"/>
+            </property>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="This_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="7"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-505.0, -936.0}"/>
+    </entity>
+    <entity name="LPU_2" class="VisualSim.actor.lib.Scheduler_SW">
+        <property name="Resource_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_2&quot;"/>
+        <property name="Next_Resource" class="VisualSim.data.expr.Parameter" value="&quot;None&quot;"/>
+        <property name="Time_Type" class="VisualSim.kernel.util.StringAttribute" value="Relative Time">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Relative Time" class="VisualSim.kernel.util.StringAttribute" value="Relative Time"/>
+                <property name="Number Clocks" class="VisualSim.kernel.util.StringAttribute" value="Number Clocks"/>
+            </property>
+        </property>
+        <property name="Scheduler_Type" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Scheduler_FCFS" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS"/>
+                <property name="FCFS + Preempt" class="VisualSim.kernel.util.StringAttribute" value="FCFS + Preempt"/>
+                <property name="Scheduler_RR" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_RR"/>
+                <property name="Scheduler_User_1" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_1"/>
+                <property name="Scheduler_User_2" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_2"/>
+            </property>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="This_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="7"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-372.0, -1029.0}"/>
+    </entity>
+    <entity name="LPU_3" class="VisualSim.actor.lib.Scheduler_SW">
+        <property name="Resource_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_3&quot;"/>
+        <property name="Next_Resource" class="VisualSim.data.expr.Parameter" value="&quot;None&quot;"/>
+        <property name="Time_Type" class="VisualSim.kernel.util.StringAttribute" value="Relative Time">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Relative Time" class="VisualSim.kernel.util.StringAttribute" value="Relative Time"/>
+                <property name="Number Clocks" class="VisualSim.kernel.util.StringAttribute" value="Number Clocks"/>
+            </property>
+        </property>
+        <property name="Scheduler_Type" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Scheduler_FCFS" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_FCFS"/>
+                <property name="FCFS + Preempt" class="VisualSim.kernel.util.StringAttribute" value="FCFS + Preempt"/>
+                <property name="Scheduler_RR" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_RR"/>
+                <property name="Scheduler_User_1" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_1"/>
+                <property name="Scheduler_User_2" class="VisualSim.kernel.util.StringAttribute" value="Scheduler_User_2"/>
+            </property>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="This_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="7"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{1.0, -1029.0}"/>
+    </entity>
+    <entity name="ExpressionList_0" class="VisualSim.actor.lib.Expression_Decision">
+        <property name="Block_Documentation" class="VisualSim.kernel.util.DocumentAttribute" value="/* Template to enter multiple RegEx lines*/&#10;   Result_A = MyRegExpression_A_or_None /* Expression 1 */&#10;   Result_B = MyRegExpression_B_or_None  /* Expression 2 */&#10;   Result_C = MyRegExpression_C_or_None /* Expression 3 */  &#10;/* Add as many RegEx lines are required */&#10;"/>
+        <property name="Expression_List" class="VisualSim.kernel.util.StringAttribute" value="/* Template to enter multiple RegEx lines*/">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle">
+                <property name="height" class="VisualSim.data.expr.Parameter" value="15"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="40"/>
+            </property>
+        </property>
+        <property name="Output_Ports" class="VisualSim.data.expr.StringParameter" value="latency"/>
+        <property name="Output_Values" class="VisualSim.data.expr.StringParameter" value="input.Task_Latency"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-389.0, -856.0}"/>
+    </entity>
+    <entity name="SwitchCase" class="VisualSim.actor.lib.Switch_One_X_Four">
+        <property name="Switch_Address" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 0">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Relative ADDR = 0" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 0"/>
+                <property name="Relative ADDR = 4" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 4"/>
+                <property name="Relative ADDR = 8" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 8"/>
+                <property name="Relative ADDR = 12" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 12"/>
+                <property name="Relative ADDR = 16" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 16"/>
+                <property name="Relative ADDR = 20" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 20"/>
+                <property name="Relative ADDR = 24" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 24"/>
+                <property name="Relative ADDR = 28" class="VisualSim.kernel.util.StringAttribute" value="Relative ADDR = 28"/>
+            </property>
+        </property>
+        <property name="Switch_One_X_FourIcon" class="VisualSim.ModelBuilder.icon.EditorIcon">
+            <property name="rectangle2" class="VisualSim.ModelBuilder.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-14.0, 0.0"/>
+                <property name="lineWidth" class="VisualSim.data.expr.Parameter" value="3.0"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.8,0.2,0.0,1.0}"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="35.0"/>
+                <property name="height" class="VisualSim.data.expr.Parameter" value="35.0"/>
+                <property name="centered" class="VisualSim.data.expr.Parameter" value="true"/>
+                <property name="fillColor" class="VisualSim.actor.gui.ColorAttribute" value="{1.0,0.2,0.0,1.0}"/>
+                <property name="rounding" class="VisualSim.data.expr.Parameter" value="6.0"/>
+            </property>
+            <property name="rectangle" class="VisualSim.ModelBuilder.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-15.0, 2.0"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="none"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="33.0"/>
+                <property name="height" class="VisualSim.data.expr.Parameter" value="37.0"/>
+                <property name="centered" class="VisualSim.data.expr.Parameter" value="true"/>
+            </property>
+            <property name="line3" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-30.0, 0.0"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+            </property>
+            <property name="line4" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-10.0, -10.0"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+            </property>
+            <property name="line5" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-30.0, 0.0"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+            </property>
+            <property name="line6" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-10.0, 10.0"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+            </property>
+            <property name="line" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-20.0, 0.0"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.2,0.4,1.0,1.0}"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+                <property name="y" class="VisualSim.data.expr.Parameter" value="-10.0"/>
+            </property>
+            <property name="line7" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-20.0, 0.0"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.2,0.4,1.0,1.0}"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="14.14"/>
+            </property>
+            <property name="line8" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="-20.0, 0.0"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.2,0.4,1.0,1.0}"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="10.0"/>
+                <property name="y" class="VisualSim.data.expr.Parameter" value="10.0"/>
+            </property>
+            <property name="line9" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-19.0, 0.0]"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.2,0.4,1.0,1.0}"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="13.0"/>
+                <property name="y" class="VisualSim.data.expr.Parameter" value="6.0"/>
+            </property>
+            <property name="line10" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="{-19.0, 0.0}"/>
+                <property name="lineColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.2,0.4,1.0,1.0}"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="13.0"/>
+                <property name="y" class="VisualSim.data.expr.Parameter" value="-6.0"/>
+            </property>
+            <property name="_windowProperties" class="VisualSim.actor.gui.WindowPropertiesAttribute" value="{bounds={60, 52, 816, 669}, maximized=false}"/>
+            <property name="_ModelBuilderSize" class="VisualSim.actor.gui.SizeAttribute" value="[600, 400]"/>
+            <property name="_ModelBuilderZoomFactor" class="VisualSim.data.expr.ExpertParameter" value="4.0"/>
+            <property name="_ModelBuilderCenter" class="VisualSim.data.expr.ExpertParameter" value="{0.0, 0.0}"/>
+            <property name="annotation2" class="VisualSim.ModelBuilder.kernel.attributes.TextAttribute">
+                <property name="textSize" class="VisualSim.data.expr.Parameter" value="7"/>
+                <property name="textColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}"/>
+                <property name="text" class="VisualSim.kernel.util.StringAttribute" value="4"/>
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-10.0, 7.0]"/>
+            </property>
+            <property name="annotation" class="VisualSim.ModelBuilder.kernel.attributes.TextAttribute">
+                <property name="textSize" class="VisualSim.data.expr.Parameter" value="7"/>
+                <property name="textColor" class="VisualSim.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}"/>
+                <property name="text" class="VisualSim.kernel.util.StringAttribute" value="1"/>
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-9.0, -20.0]"/>
+            </property>
+            <property name="line11" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-6.0, -6.0]"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="6.0"/>
+            </property>
+            <property name="line12" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-6.0, 6.0]"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="6.0"/>
+            </property>
+            <property name="line13" class="VisualSim.ModelBuilder.kernel.attributes.LineAttribute">
+                <property name="_location" class="VisualSim.kernel.util.Location" value="[-5.0, 0.0]"/>
+                <property name="x" class="VisualSim.data.expr.Parameter" value="5.0"/>
+            </property>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{29.0, -723.0}"/>
+        <port name="control" class="VisualSim.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_type" class="VisualSim.actor.TypeAttribute" value="int"/>
+        </port>
+    </entity>
+    <entity name="Mapper2" class="VisualSim.actor.lib.Task_Basic">
+        <property name="Target_Resource" class="VisualSim.data.expr.StringParameter" value="&quot;LPU_1&quot;"/>
+        <property name="Task_Number" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Priority" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Time" class="VisualSim.data.expr.StringParameter" value="0.02"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Parent_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{190.0, -673.0}"/>
+    </entity>
+    <entity name="Mapper3" class="VisualSim.actor.lib.Task_Basic">
+        <property name="Target_Resource" class="VisualSim.data.expr.StringParameter" value="&quot;LPU_2&quot;"/>
+        <property name="Task_Number" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Priority" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Time" class="VisualSim.data.expr.StringParameter" value="0.02"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Parent_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{190.0, -615.0}"/>
+    </entity>
+    <entity name="Mapper4" class="VisualSim.actor.lib.Task_Basic">
+        <property name="Target_Resource" class="VisualSim.data.expr.StringParameter" value="&quot;LPU_3&quot;"/>
+        <property name="Task_Number" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Priority" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="Task_Time" class="VisualSim.data.expr.StringParameter" value="0.02"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Parent_Scheduler_Name"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{190.0, -557.0}"/>
+    </entity>
+    <entity name="LPU0" class="VisualSim.actor.lib.Stats_Basic">
+        <property name="Statistic_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_0_Stats&quot;"/>
+        <property name="Statistic_Type" class="VisualSim.kernel.util.Attribute"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Statistic_Type"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-79.0, -858.0}"/>
+    </entity>
+    <entity name="ExpressionList_1" class="VisualSim.actor.lib.Expression_Decision">
+        <property name="Block_Documentation" class="VisualSim.kernel.util.DocumentAttribute" value="/* Template to enter multiple RegEx lines*/&#10;   Result_A = MyRegExpression_A_or_None /* Expression 1 */&#10;   Result_B = MyRegExpression_B_or_None  /* Expression 2 */&#10;   Result_C = MyRegExpression_C_or_None /* Expression 3 */  &#10;/* Add as many RegEx lines are required */&#10;"/>
+        <property name="Expression_List" class="VisualSim.kernel.util.StringAttribute" value="/* Template to enter multiple RegEx lines*/">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle">
+                <property name="height" class="VisualSim.data.expr.Parameter" value="15"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="40"/>
+            </property>
+        </property>
+        <property name="Output_Ports" class="VisualSim.data.expr.StringParameter" value="decision"/>
+        <property name="Output_Values" class="VisualSim.data.expr.StringParameter" value="1"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-389.0, -937.0}"/>
+    </entity>
+    <entity name="ExpressionList_2" class="VisualSim.actor.lib.Expression_Decision">
+        <property name="Block_Documentation" class="VisualSim.kernel.util.DocumentAttribute" value="/* Template to enter multiple RegEx lines*/&#10;   Result_A = MyRegExpression_A_or_None /* Expression 1 */&#10;   Result_B = MyRegExpression_B_or_None  /* Expression 2 */&#10;   Result_C = MyRegExpression_C_or_None /* Expression 3 */  &#10;/* Add as many RegEx lines are required */&#10;"/>
+        <property name="Expression_List" class="VisualSim.kernel.util.StringAttribute" value="/* Template to enter multiple RegEx lines*/">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle">
+                <property name="height" class="VisualSim.data.expr.Parameter" value="15"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="40"/>
+            </property>
+        </property>
+        <property name="Output_Ports" class="VisualSim.data.expr.StringParameter" value="latency"/>
+        <property name="Output_Values" class="VisualSim.data.expr.StringParameter" value="input.Task_Latency"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-256.0, -1030.0}"/>
+    </entity>
+    <entity name="ExpressionList_3" class="VisualSim.actor.lib.Expression_Decision">
+        <property name="Block_Documentation" class="VisualSim.kernel.util.DocumentAttribute" value="/* Template to enter multiple RegEx lines*/&#10;   Result_A = MyRegExpression_A_or_None /* Expression 1 */&#10;   Result_B = MyRegExpression_B_or_None  /* Expression 2 */&#10;   Result_C = MyRegExpression_C_or_None /* Expression 3 */  &#10;/* Add as many RegEx lines are required */&#10;"/>
+        <property name="Expression_List" class="VisualSim.kernel.util.StringAttribute" value="/* Template to enter multiple RegEx lines*/">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle">
+                <property name="height" class="VisualSim.data.expr.Parameter" value="15"/>
+                <property name="width" class="VisualSim.data.expr.Parameter" value="40"/>
+            </property>
+        </property>
+        <property name="Output_Ports" class="VisualSim.data.expr.StringParameter" value="latency"/>
+        <property name="Output_Values" class="VisualSim.data.expr.StringParameter" value="input.Task_Latency"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{117.0, -1030.0}"/>
+    </entity>
+    <entity name="LPU1" class="VisualSim.actor.lib.Stats_Basic">
+        <property name="Statistic_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_1_Stats&quot;"/>
+        <property name="Statistic_Type" class="VisualSim.kernel.util.Attribute"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Statistic_Type"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-227.0, -929.0}"/>
+    </entity>
+    <entity name="LPU2" class="VisualSim.actor.lib.Stats_Basic">
+        <property name="Statistic_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_2_Stats&quot;"/>
+        <property name="Statistic_Type" class="VisualSim.kernel.util.Attribute"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Statistic_Type"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-96.0, -1022.0}"/>
+    </entity>
+    <entity name="LPU3" class="VisualSim.actor.lib.Stats_Basic">
+        <property name="Statistic_Name" class="VisualSim.data.expr.Parameter" value="&quot;LPU_3_Stats&quot;"/>
+        <property name="Statistic_Type" class="VisualSim.kernel.util.Attribute"/>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Statistic_Type"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="4"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{278.0, -1022.0}"/>
+    </entity>
+    <entity name="LatencyFork" class="VisualSim.actor.lib.logic.Connect_EIO">
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-228.0, -856.0}"/>
+    </entity>
+    <entity name="Fork2" class="VisualSim.actor.lib.logic.Connect_EIO">
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-399.0, -710.0}"/>
+    </entity>
+    <entity name="AdaptiveController" class="VisualSim.actor.lib.Virtual_Machine">
+        <property name="Expression_List" class="VisualSim.kernel.util.StringAttribute" value="Decision = 0;&#10;SEND(&quot;output&quot;, Decision);">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle"/>
+        </property>
+        <property name="Optional_Parameters" class="VisualSim.kernel.util.StringAttribute" value="/* First row contains Column Names.              */&#10;Parameter_Name                 Parameter_Value&#10;Path                           VS/User_Library&#10;Read_File                      none&#10;Save_Files                     false&#10;Profile_File                   none&#10;Listen_to_File                 none&#10;Duplicate_Input                true&#10;Profile                        0&#10;Maximum_Loops                  1000000&#10;Block_Reference                Block_Name&#10;Port_Order_Array               {&quot;input&quot;}&#10;Add_Scheduler_Times_to_DS      false">
+            <property name="style" class="VisualSim.actor.gui.style.TextStyle"/>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIconVM">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Block_Name"/>
+            <property name="attributeName2" class="VisualSim.kernel.util.StringAttribute" value="Expression_List"/>
+            <property name="displayWidth" class="VisualSim.data.expr.Parameter" value="12"/>
+        </property>
+        <property name="_tableauFactory" class="VisualSim.ModelBuilder.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Expression_List"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-307.0, -670.0}"/>
+        <port name="output" class="VisualSim.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_type" class="VisualSim.actor.TypeAttribute" value="int"/>
+        </port>
+    </entity>
+    <entity name="Decision fork" class="VisualSim.actor.lib.logic.Connect_EIO">
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-131.0, -653.0}"/>
+    </entity>
+    <entity name="TimeDataPlotter" class="VisualSim.actor.lib.gui.TimedPlotter">
+        <property name="_windowProperties" class="VisualSim.actor.gui.WindowPropertiesAttribute" value="{bounds={5, 0, 461, 432}, maximized=false}"/>
+        <property name="_plotSize" class="VisualSim.actor.gui.SizeAttribute" value="[445, 371]"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{15.0, -643.0}"/>
+        <configure>
+<?plotml
+<!DOCTYPE plot PUBLIC "-//Mirabilis Design//DTD PlotML 1//EN"
+"http://www.mirabilisdesign.com/xml/dtd/PlotML_1.dtd">
+            <plot>
+<title>TimeDataPlotter</title>
+                <xRange min="0.0" max="10.0"/>
+                <yRange min="0.0" max="0.0"/>
+                <default/>
+            </plot>
+?>
+        </configure>
+    </entity>
+    <entity name="HistogramPlotter" class="VisualSim.actor.lib.gui.HistogramPlotter">
+        <property name="_windowProperties" class="VisualSim.actor.gui.WindowPropertiesAttribute" value="{bounds={443, 0, 923, 431}, maximized=false}"/>
+        <property name="_plotSize" class="VisualSim.actor.gui.SizeAttribute" value="[907, 370]"/>
+        <property name="binWidth" class="VisualSim.data.expr.Parameter" value="0.001"/>
+        <property name="binOffset" class="VisualSim.data.expr.Parameter" value="0.0005"/>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{-97.0, -795.0}"/>
+        <configure>
+<?plotml
+<!DOCTYPE plot PUBLIC "-//Mirabilis Design//DTD PlotML 1//EN"
+"http://www.mirabilisdesign.com/xml/dtd/PlotML_1.dtd">
+            <plot>
+<title>HistogramPlotter</title>
+                <xRange min="0.0205" max="5.010999999999999"/>
+                <yRange min="0.0" max="1.0"/>
+                <barGraph width="0.5" offset="0.15"/>
+                <bin width="0.001" offset="5.0E-4"/>
+            </plot>
+?>
+        </configure>
+    </entity>
+    <entity name="TextDisplay" class="VisualSim.actor.lib.gui.Display">
+        <property name="_windowProperties" class="VisualSim.actor.gui.WindowPropertiesAttribute" value="{bounds={769, 391, 609, 420}, maximized=false}"/>
+        <property name="title" class="VisualSim.kernel.util.StringAttribute" value="STATIC LPU0 STATISTICS"/>
+        <property name="Font_Type" class="VisualSim.kernel.util.Attribute">
+            <property name="style" class="VisualSim.actor.gui.style.ChoiceStyle">
+                <property name="Courier" class="VisualSim.kernel.util.StringAttribute" value="Courier"/>
+                <property name="Lucida Console" class="VisualSim.kernel.util.StringAttribute" value="Lucida Console"/>
+            </property>
+        </property>
+        <property name="_icon" class="VisualSim.ModelBuilder.icon.AttributeValueIcon">
+            <property name="attributeName" class="VisualSim.kernel.util.StringAttribute" value="Title"/>
+        </property>
+        <property name="_location" class="VisualSim.kernel.util.Location" value="{51.0, -861.0}"/>
+    </entity>
+    <relation name="relation" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation4" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation5" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation6" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation9" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation10" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation11" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation12" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation13" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation14" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation2" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation8" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation3" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation17" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation18" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation19" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation7" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation15" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation16" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation20" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <relation name="relation21" class="VisualSim.actor.TypedIORelation">
+        <property name="width" class="VisualSim.data.expr.Parameter" value="1"/>
+        <property name="_layoutHint" class="VisualSim.ModelBuilder.actor.LayoutHint"/>
+    </relation>
+    <link port="Traffic.output" relation="relation2"/>
+    <link port="Mapper.input" relation="relation"/>
+    <link port="LPU_0.task_output" relation="relation7"/>
+    <link port="LPU_1.task_output" relation="relation9"/>
+    <link port="LPU_2.task_output" relation="relation10"/>
+    <link port="LPU_3.task_output" relation="relation11"/>
+    <link port="ExpressionList_0.input" relation="relation7"/>
+    <link port="ExpressionList_0.output" relation="relation15"/>
+    <link port="SwitchCase.input" relation="relation8"/>
+    <link port="SwitchCase.control" relation="relation18"/>
+    <link port="SwitchCase.zero_output" relation="relation"/>
+    <link port="SwitchCase.one_output" relation="relation4"/>
+    <link port="SwitchCase.two_output" relation="relation5"/>
+    <link port="SwitchCase.three_output" relation="relation6"/>
+    <link port="Mapper2.input" relation="relation4"/>
+    <link port="Mapper3.input" relation="relation5"/>
+    <link port="Mapper4.input" relation="relation6"/>
+    <link port="LPU0.stats_data" relation="relation16"/>
+    <link port="LPU0.output" relation="relation21"/>
+    <link port="ExpressionList_1.input" relation="relation9"/>
+    <link port="ExpressionList_1.output" relation="relation12"/>
+    <link port="ExpressionList_2.input" relation="relation10"/>
+    <link port="ExpressionList_2.output" relation="relation13"/>
+    <link port="ExpressionList_3.input" relation="relation11"/>
+    <link port="ExpressionList_3.output" relation="relation14"/>
+    <link port="LPU1.stats_data" relation="relation12"/>
+    <link port="LPU2.stats_data" relation="relation13"/>
+    <link port="LPU3.stats_data" relation="relation14"/>
+    <link port="LatencyFork.input" relation="relation15"/>
+    <link port="LatencyFork.output" relation="relation16"/>
+    <link port="LatencyFork.output2" relation="relation20"/>
+    <link port="Fork2.input" relation="relation2"/>
+    <link port="Fork2.output" relation="relation8"/>
+    <link port="Fork2.output2" relation="relation3"/>
+    <link port="AdaptiveController.input" relation="relation3"/>
+    <link port="AdaptiveController.output" relation="relation17"/>
+    <link port="Decision fork.input" relation="relation17"/>
+    <link port="Decision fork.output" relation="relation18"/>
+    <link port="Decision fork.output2" relation="relation19"/>
+    <link port="TimeDataPlotter.input" relation="relation19"/>
+    <link port="HistogramPlotter.input" relation="relation20"/>
+    <link port="TextDisplay.input" relation="relation21"/>
+</entity>
